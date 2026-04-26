@@ -1,0 +1,4 @@
+- model.path=/Users/chintan/CSE/Project/NexusVision/worker/big-lama
+- indir=/Users/chintan/CSE/Project/NexusVision/worker/temp_9a79e69f-fcb4-453c-88b8-de1306213e6e
+- outdir=/Users/chintan/CSE/Project/NexusVision/worker/temp_9a79e69f-fcb4-453c-88b8-de1306213e6e/output
+- dataset.img_suffix=.png

@@ -1,0 +1,30 @@
+body {
+  margin: 0; padding: 0;
+  background-color: #0f172a; /* Deep charcoal blue */
+  color: #f8fafc;
+  font-family: sans-serif;
+  display: flex; justify-content: center; align-items: center;
+  min-height: 100vh;
+}
+
+.app-container { text-align: center; width: 100%; max-width: 800px; }
+
+h1 {
+  background: -webkit-linear-gradient(#38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2.5rem;
+}
+
+.canvas-container {
+  background-color: #1e293b;
+  padding: 20px; border-radius: 12px;
+  border: 1px solid #334155;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.upload-btn {
+  background-color: #3b82f6; color: white;
+  padding: 12px 24px; border-radius: 8px;
+  border: none; font-weight: bold; cursor: pointer;
+}

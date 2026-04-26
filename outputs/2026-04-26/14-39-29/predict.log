@@ -1,0 +1,7 @@
+[2026-04-26 14:39:29,997][saicinpainting.utils][WARNING] - Setting signal 1 handler <function print_traceback_handler at 0x1582bb640>
+[2026-04-26 14:39:29,997][__main__][CRITICAL] - Prediction failed due to [Errno 2] No such file or directory: '/Users/chintan/CSE/Project/NexusVision/worker/big-lama/config.yaml':
+Traceback (most recent call last):
+  File "/Users/chintan/CSE/Project/NexusVision/worker/bin/predict.py", line 51, in main
+    with open(train_config_path, 'r') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/chintan/CSE/Project/NexusVision/worker/big-lama/config.yaml'
+
