@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import uuid
 from sqlalchemy.orm import Session
 
-# Import our custom logic
+# Import custom logic
 from .database import SessionLocal, InferenceJob, User
 from .storage import upload_image_to_minio
 from worker.worker import process_inference_job

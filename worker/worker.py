@@ -14,8 +14,6 @@ celery_app = Celery(
     broker='redis://127.0.0.1:6379/0',
     backend='redis://127.0.0.1:6379/0'
 )
-
-# UPGRADE: FAANG-level fault tolerance (Late Acks & Retries)
 @celery_app.task(bind=True, name="process_inference_job", max_retries=3, acks_late=True)
 def process_inference_job(self, job_id: str, original_image_name: str, mask_image_name: str, model_name: str):
     d = f"worker/temp_{job_id}"
@@ -72,7 +70,7 @@ def process_inference_job(self, job_id: str, original_image_name: str, mask_imag
     except Exception as e:
         print(f"FAILED: {str(e)}. Retrying...")
         try:
-            # UPGRADE: Exponential backoff (retries after 2s, 4s, 8s)
+
             self.retry(exc=e, countdown=2 ** self.request.retries)
         except self.MaxRetriesExceededError:
             j.status = "FAILED"
@@ -80,5 +78,4 @@ def process_inference_job(self, job_id: str, original_image_name: str, mask_imag
             return False
     finally:
         s.close()
-        # UPGRADE: Disk Leak Fix (Nukes the folder so your Mac doesn't fill up)
         shutil.rmtree(d, ignore_errors=True)

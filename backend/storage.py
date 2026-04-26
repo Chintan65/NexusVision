@@ -2,7 +2,7 @@ import boto3
 from botocore.exceptions import ClientError
 import io
 
-# Connect to our local MinIO Docker container (AWS S3 Clone)
+
 s3_client = boto3.client(
     's3',
     endpoint_url='http://127.0.0.1:9000', 
